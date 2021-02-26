@@ -39,6 +39,7 @@ class ErpPriceTest extends TestCase
     }
 
     /**
+     * @magentoDbIsolation enabled
      * @magentoDataFixture dataFixture
      */
     public function testCheckPriceDisabled()
@@ -68,5 +69,6 @@ class ErpPriceTest extends TestCase
     public static function dataFixture()
     {
         require __DIR__ . '/../../_files/product.php';
+        require __DIR__ . '/../../_files/prices.php';
     }
 }
