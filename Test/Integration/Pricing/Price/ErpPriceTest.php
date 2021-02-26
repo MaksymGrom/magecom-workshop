@@ -29,12 +29,23 @@ class ErpPriceTest extends TestCase
 
     /**
      * @magentoDataFixture dataFixture
+     * @magentoConfigFixture project/erp_price/enabled 1
      */
     public function testCheckPrice()
     {
         $product = $this->getTestProduct();
         $price = $product->getPriceInfo()->getPrice(BasePrice::PRICE_CODE);
         $this->assertEquals(1, (int)$price->getValue(), 'Price must be equal 1');
+    }
+
+    /**
+     * @magentoDataFixture dataFixture
+     */
+    public function testCheckPriceDisabled()
+    {
+        $product = $this->getTestProduct();
+        $price = $product->getPriceInfo()->getPrice(BasePrice::PRICE_CODE);
+        $this->assertEquals(10, (int)$price->getValue(), 'Price must be equal 10');
     }
 
     /**
