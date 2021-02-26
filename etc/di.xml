@@ -1,6 +1,9 @@
 <?xml version="1.0"?>
 
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Project\ErpPrice\Api\GetErpPriceServiceInterface" type="Project\ErpPrice\Model\Service\GetErpPriceService"/>
+    <preference for="Project\ErpPrice\Api\Data\PriceResultInterface" type="Project\ErpPrice\Model\Data\PriceResult"/>
+
     <virtualType name="Magento\Catalog\Pricing\Price\Pool">
         <arguments>
             <argument name="prices" xsi:type="array">
